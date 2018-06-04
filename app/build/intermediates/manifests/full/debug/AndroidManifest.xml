@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.skipmorrow.powerclock"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="11" />
+
+    <original-package android:name="com.skipmorrow.powerclock" />
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:debuggable="true"
+        android:icon="@drawable/ic_launcher_alarmclock"
+        android:label="@string/app_label" >
+        <provider
+            android:name="com.skipmorrow.powerclock.AlarmProvider"
+            android:authorities="com.skipmorrow.powerclock" />
+
+        <activity
+            android:name="com.skipmorrow.powerclock.AlarmClock"
+            android:configChanges="orientation|keyboardHidden|keyboard|navigation"
+            android:label="@string/app_label" >
+        </activity>
+        <activity
+            android:name="com.skipmorrow.powerclock.ClockDisplayActivity"
+            android:configChanges="orientation|keyboardHidden|keyboard|navigation"
+            android:label="@string/app_label"
+            android:screenOrientation="landscape" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.skipmorrow.powerclock.SettingsActivity"
+            android:label="@string/settings" >
+        </activity>
+        <activity android:name="com.skipmorrow.powerclock.HelpActivity" >
+        </activity>
+        <activity
+            android:name="com.skipmorrow.powerclock.SetBrightnessActivity"
+            android:label="@string/settings"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="com.skipmorrow.powerclock.SetFontScaleActivity"
+            android:label="@string/settings"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="com.skipmorrow.powerclock.SetAlarm"
+            android:configChanges="orientation|keyboardHidden|keyboard|navigation"
+            android:label="@string/set_alarm" />
+        <activity
+            android:name="com.skipmorrow.powerclock.AlarmAlert"
+            android:configChanges="orientation|keyboardHidden|keyboard|navigation"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance"
+            android:taskAffinity=""
+            android:theme="@style/alarm_alert" />
+
+        <!--
+             This activity is basically the same as AlarmAlert but with a more
+             generic theme. It also shows as full screen (with status bar) but
+             with the wallpaper background.
+        -->
+        <activity
+            android:name="com.skipmorrow.powerclock.AlarmAlertFullScreen"
+            android:configChanges="orientation|keyboardHidden|keyboard|navigation"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance"
+            android:taskAffinity=""
+            android:theme="@android:style/Theme.Wallpaper.NoTitleBar" />
+        <activity android:name="com.skipmorrow.powerclock.ClockPicker" />
+
+        <receiver android:name="com.skipmorrow.powerclock.AlarmReceiver" >
+            <intent-filter>
+                <action android:name="com.skipmorrow.powerclock.ALARM_ALERT" />
+                <action android:name="alarm_killed" />
+                <action android:name="cancel_snooze" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.skipmorrow.powerclock.PowerConnectedReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.UMS_CONNECTED" />
+            </intent-filter>
+        </receiver>
+
+        <!--
+             This service receives the same intent as AlarmReceiver but it does
+             not respond to the same broadcast. The AlarmReceiver will receive
+             the alert broadcast and will start this service with the same
+             intent. The service plays the alarm alert and vibrates the device.
+             This allows the alert to continue playing even if another activity
+             causes the AlarmAlert activity to pause.
+        -->
+        <service android:name="com.skipmorrow.powerclock.AlarmKlaxon" >
+            <intent-filter>
+                <action android:name="com.skipmorrow.powerclock.ALARM_ALERT" />
+            </intent-filter>
+        </service>
+
+        <receiver android:name="com.skipmorrow.powerclock.AlarmInitReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+                <action android:name="android.intent.action.LOCALE_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.skipmorrow.powerclock.AnalogAppWidgetProvider"
+            android:icon="@drawable/ic_widget_analog_clock"
+            android:label="@string/analog_gadget" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/analog_appwidget" />
+        </receiver>
+    </application>
+
+</manifest>
