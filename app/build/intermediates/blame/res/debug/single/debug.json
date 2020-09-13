@@ -1,426 +1,426 @@
 [
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\layout-land_alarm_clock.xml.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\layout-land\\alarm_clock.xml"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\layout_clock_droids.xml.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\layout\\clock_droids.xml"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_wrench_white_icon.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\wrench_white_icon.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_appwidget_clock_dial.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\appwidget_clock_dial.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_clock_minute.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\clock_minute.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_circle3.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\circle3.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\xml_analog_appwidget.xml.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\xml\\analog_appwidget.xml"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_skip_next_gray_icon.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\skip_next_gray_icon.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_clockdroid2_minute.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\clockdroid2_minute.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_clock_display.xml.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\layout\\activity_clock_display.xml"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_clockgoog_dial.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\clockgoog_dial.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable_circle2_drawable.xml.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable\\circle2_drawable.xml"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\raw_in_call_alarm.ogg.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\raw\\in_call_alarm.ogg"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_clockdroids_minute.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\clockdroids_minute.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_circle0.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\circle0.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_appwidget_clock_minute.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\appwidget_clock_minute.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable_circle1_drawable.xml.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable\\circle1_drawable.xml"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_skip_next_blue_icon.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\skip_next_blue_icon.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_clock_hour.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\clock_hour.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_clockgoog_dial.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\clockgoog_dial.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_dialog.9.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\dialog.9.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_moon_white_icon.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\moon_white_icon.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\layout_clockpicker.xml.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\layout\\clockpicker.xml"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_cog_settings_gear.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\cog_settings_gear.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_clockdroids_hour.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\clockdroids_hour.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_launcher_alarmclock.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher_alarmclock.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_circle3.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\circle3.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_clock_hour.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\clock_hour.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\layout_clock_droid2.xml.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\layout\\clock_droid2.xml"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\xml_analog_appwidget.xml.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\xml\\analog_appwidget.xml"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_appwidget_clock_minute.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\appwidget_clock_minute.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_clockdroids_hour.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\clockdroids_hour.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_menu_clock_face.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\ic_menu_clock_face.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_moon_gray_icon.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\moon_gray_icon.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\layout_save_cancel_alarm.xml.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\layout\\save_cancel_alarm.xml"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_clockdroid2_dial.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\clockdroid2_dial.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_clock_dial.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\clock_dial.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_skip_next_white_icon.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\skip_next_white_icon.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\layout_alarm_alert.xml.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\layout\\alarm_alert.xml"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_widget_analog_clock.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\ic_widget_analog_clock.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_skip_next_blue_icon.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\skip_next_blue_icon.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\layout_alarm_clock.xml.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\layout\\alarm_clock.xml"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\layout_digital_clock.xml.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\layout\\digital_clock.xml"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_alarm_clock_green_icon.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\alarm_clock_green_icon.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_circle1.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\circle1.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_circle1.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\circle1.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher_alarmclock.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher_alarmclock.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_clockgoog_dial.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\clockgoog_dial.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_clockdroids_minute.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\clockdroids_minute.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_clockdroid2_minute.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\clockdroid2_minute.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\layout_clock_droids.xml.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\layout\\clock_droids.xml"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_clockdroid2_hour.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\clockdroid2_hour.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_appwidget_clock_hour.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\appwidget_clock_hour.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\layout_clock_droid2.xml.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\layout\\clock_droid2.xml"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_alarm_clock_red_icon.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\alarm_clock_red_icon.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_stat_notify_alarm.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\stat_notify_alarm.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_moon_green_icon.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\moon_green_icon.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_sun_green_icon.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\sun_green_icon.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\layout_context_menu_header.xml.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\layout\\context_menu_header.xml"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\menu_context_menu.xml.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\menu\\context_menu.xml"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_clock_dial.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\clock_dial.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\raw_fallbackring.ogg.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\raw\\fallbackring.ogg"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_circle2.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\circle2.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_custom_button.xml.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\custom_button.xml"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\raw_fallbackring.ogg.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\raw\\fallbackring.ogg"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_clockdroids_dial.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\clockdroids_dial.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_sun_green_icon.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\sun_green_icon.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_clock_hour.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\clock_hour.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_wrench_red_icon.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\wrench_red_icon.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\layout_digital_clock.xml.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\layout\\digital_clock.xml"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_dialog.9.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\dialog.9.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_appwidget_clock_minute.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\appwidget_clock_minute.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_sun_white_icon.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\sun_white_icon.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_clockdroids_minute.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\clockdroids_minute.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable_animate_circle.xml.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable\\animate_circle.xml"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_circle2.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\circle2.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\layout_alarm_clock.xml.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\layout\\alarm_clock.xml"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\layout_alarm_alert.xml.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\layout\\alarm_alert.xml"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\menu_context_menu.xml.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\menu\\context_menu.xml"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_circle2.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\circle2.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_clockgoog_minute.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\clockgoog_minute.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\layout_analog_appwidget.xml.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\layout\\analog_appwidget.xml"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\layout_clock_googly.xml.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\layout\\clock_googly.xml"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_wrench_gray_icon.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\wrench_gray_icon.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_wrench_icon_614x460.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\wrench_icon_614x460.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_appwidget_clock_hour.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\appwidget_clock_hour.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_circle1.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\circle1.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_alarm_clock_red_icon.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\alarm_clock_red_icon.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_clockdroid2_minute.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\clockdroid2_minute.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\menu_activity_clock_display.xml.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\menu\\activity_clock_display.xml"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_menu_clock_face.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\ic_menu_clock_face.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_moon_green_icon.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\moon_green_icon.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_clockdroids_dial.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\clockdroids_dial.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_sun_blue_icon.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\sun_blue_icon.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_moon_red_icon.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\moon_red_icon.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_appwidget_clock_hour.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\appwidget_clock_hour.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_clockdroids_minute.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\clockdroids_minute.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_skip_next_green_icon.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\skip_next_green_icon.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_wrench_gray_icon.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\wrench_gray_icon.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\layout_help_activity_layout.xml.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\layout\\help_activity_layout.xml"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_clockgoog_dial.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\clockgoog_dial.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_clockgoog_hour.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\clockgoog_hour.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\layout_seek_bar_preference.xml.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\layout\\seek_bar_preference.xml"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_clockgoog_minute.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\clockgoog_minute.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_alarm_clock_blue_icon.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\alarm_clock_blue_icon.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_clockdroids_dial.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\clockdroids_dial.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_skip_next_red_icon.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\skip_next_red_icon.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_clockdroid2_minute.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\clockdroid2_minute.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_wrench_green_icon.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\wrench_green_icon.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\menu_main_menu.xml.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\menu\\main_menu.xml"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_clockdroids_dial.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\clockdroids_dial.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_circle3.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\circle3.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\layout_clock_basic_bw.xml.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\layout\\clock_basic_bw.xml"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_dialog.9.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\dialog.9.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_circle0.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\circle0.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_skip_next_red_icon.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\skip_next_red_icon.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_alarm_clock_gray_icon.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\alarm_clock_gray_icon.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_clock_dial.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\clock_dial.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_sun_gray_icon.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\sun_gray_icon.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_appwidget_clock_dial.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\appwidget_clock_dial.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_clockdroid2_dial.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\clockdroid2_dial.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\raw_in_call_alarm.ogg.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\raw\\in_call_alarm.ogg"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\xml_settings.xml.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\xml\\settings.xml"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable_circle0_drawable.xml.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable\\circle0_drawable.xml"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable_circle3_drawable.xml.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable\\circle3_drawable.xml"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_clockdroid2_hour.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\clockdroid2_hour.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_sun_blue_icon.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\sun_blue_icon.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_wrench_red_icon.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\wrench_red_icon.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_clockgoog_hour.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\clockgoog_hour.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_clockgoog_hour.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\clockgoog_hour.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_clockgoog_minute.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\clockgoog_minute.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_circle0.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\circle0.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_clock_display.xml.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\layout\\activity_clock_display.xml"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\layout-land_alarm_clock.xml.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\layout-land\\alarm_clock.xml"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_widget_analog_clock.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\ic_widget_analog_clock.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_widget_analog_clock.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\ic_widget_analog_clock.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_alarm_clock_green_icon.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\alarm_clock_green_icon.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_clock_minute.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\clock_minute.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_clockdroid2_hour.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\clockdroid2_hour.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_clock_dial.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\clock_dial.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_cog_settings_gear.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\cog_settings_gear.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher_alarmclock.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher_alarmclock.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_wrench_blue_icon.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\wrench_blue_icon.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_clockgoog_minute.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\clockgoog_minute.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_clockgoog_hour.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\clockgoog_hour.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\layout_clock_googly.xml.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\layout\\clock_googly.xml"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_stat_notify_alarm.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\stat_notify_alarm.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_alarm_clock_gray_icon.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\alarm_clock_gray_icon.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_skip_next_green_icon.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\skip_next_green_icon.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_clock_minute.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\clock_minute.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_appwidget_clock_hour.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\appwidget_clock_hour.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\layout_save_cancel_alarm.xml.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\layout\\save_cancel_alarm.xml"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\menu_main_menu.xml.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\menu\\main_menu.xml"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_menu_clock_face.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\ic_menu_clock_face.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_sun_red_icon.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\sun_red_icon.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_wrench_blue_icon.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\wrench_blue_icon.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\menu_activity_clock_display.xml.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\menu\\activity_clock_display.xml"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_sun_gray_icon.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\sun_gray_icon.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_moon_blue_icon.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\moon_blue_icon.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\xml_settings.xml.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\xml\\settings.xml"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_circle2.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\circle2.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\layout_context_menu_header.xml.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\layout\\context_menu_header.xml"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_clockdroid2_hour.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\clockdroid2_hour.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_sun_white_icon.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\sun_white_icon.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_skip_next_white_icon.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\skip_next_white_icon.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_sun_red_icon.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\sun_red_icon.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_moon_gray_icon.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\moon_gray_icon.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable_circle1_drawable.xml.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable\\circle1_drawable.xml"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_alarm_clock_white_icon.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\alarm_clock_white_icon.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_dialog.9.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\dialog.9.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\xml_alarm_prefs.xml.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\xml\\alarm_prefs.xml"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\layout_seek_bar_preference.xml.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\layout\\seek_bar_preference.xml"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\layout_help_activity_layout.xml.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\layout\\help_activity_layout.xml"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_wrench_white_icon.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\wrench_white_icon.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable_circle0_drawable.xml.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable\\circle0_drawable.xml"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable_circle3_drawable.xml.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable\\circle3_drawable.xml"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_circle3.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\circle3.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_wrench_green_icon.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\wrench_green_icon.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable_circle2_drawable.xml.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable\\circle2_drawable.xml"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\xml_alarm_prefs.xml.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\xml\\alarm_prefs.xml"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\layout_analog_appwidget.xml.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\layout\\analog_appwidget.xml"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable_animate_circle.xml.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable\\animate_circle.xml"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_appwidget_clock_minute.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\appwidget_clock_minute.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\layout_clock_basic_bw.xml.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\layout\\clock_basic_bw.xml"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_skip_next_gray_icon.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\skip_next_gray_icon.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_moon_red_icon.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\moon_red_icon.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_widget_analog_clock.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\ic_widget_analog_clock.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_stat_notify_alarm.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\stat_notify_alarm.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_clock_hour.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\clock_hour.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_clockdroid2_dial.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\clockdroid2_dial.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_custom_button.xml.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\custom_button.xml"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\layout_alarm_time.xml.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\layout\\alarm_time.xml"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_clockdroid2_dial.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\clockdroid2_dial.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_clockdroids_hour.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\clockdroids_hour.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_clockdroids_hour.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\clockdroids_hour.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_moon_blue_icon.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\moon_blue_icon.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_launcher_alarmclock.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher_alarmclock.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_circle0.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\circle0.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_clock_minute.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\clock_minute.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\layout_clockpicker.xml.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\layout\\clockpicker.xml"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_moon_white_icon.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\moon_white_icon.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_alarm_clock_icon.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\alarm_clock_icon.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_stat_notify_alarm.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\stat_notify_alarm.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_menu_clock_face.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\ic_menu_clock_face.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_appwidget_clock_dial.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\appwidget_clock_dial.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_alarm_clock_white_icon.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\alarm_clock_white_icon.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\layout_alarm_time.xml.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\layout\\alarm_time.xml"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_wrench_icon_614x460.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\wrench_icon_614x460.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_alarm_clock_icon.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\alarm_clock_icon.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_alarm_clock_blue_icon.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-mdpi\\alarm_clock_blue_icon.png"
     },
     {
-        "merged": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_appwidget_clock_dial.png.flat",
-        "source": "C:\\Users\\Skip\\AndroidStudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\appwidget_clock_dial.png"
+        "merged": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_circle1.png.flat",
+        "source": "C:\\Users\\skip\\StudioProjects\\PowerClock1\\app\\src\\main\\res\\drawable-hdpi\\circle1.png"
     }
 ]

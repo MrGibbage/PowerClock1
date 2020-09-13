@@ -4,9 +4,7 @@
         android:versionName="1.0" 
         >
 
-    <uses-sdk
-        android:minSdkVersion="11"
-        android:targetSdkVersion="11" />
+    <uses-sdk android:targetSdkVersion="11" />
 
     <original-package android:name="com.skipmorrow.powerclock" />
 
@@ -87,6 +85,7 @@
         <receiver android:name="AlarmReceiver">
             <intent-filter>
                <action android:name="com.skipmorrow.powerclock.ALARM_ALERT" />
+               <action android:name="com.skipmorrow.powerclock.ALARM_SKIPPED" />
                <action android:name="alarm_killed" />
                <action android:name="cancel_snooze" />
             </intent-filter>

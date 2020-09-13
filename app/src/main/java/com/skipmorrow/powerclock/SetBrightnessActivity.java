@@ -47,7 +47,7 @@ public class SetBrightnessActivity extends Activity {
 	String strFontBrightness;
     String strColorPart;
 	Integer fontBrightness;
-	Integer displayBrightness; // a number from 0 to 1000. To use, must divide by 1000 to get a number between 0.0 and 1.0
+	//Integer displayBrightness; // a number from 0 to 1000. To use, must divide by 1000 to get a number between 0.0 and 1.0
 	int contentColor;
 
 @Override
@@ -74,16 +74,16 @@ public class SetBrightnessActivity extends Activity {
         
         if (daynight.equals("day")) {
         	strFontColor = PreferenceManager.getDefaultSharedPreferences(this).getString(SettingsActivity.KEY_FONT_DAY, "#ff") + strFontColor;
-        	displayBrightness = PreferenceManager.getDefaultSharedPreferences(this).getInt(SettingsActivity.KEY_DISPLAY_DAY_BRIGHTNESS, 1000);
+        	//displayBrightness = PreferenceManager.getDefaultSharedPreferences(this).getInt(SettingsActivity.KEY_DISPLAY_DAY_BRIGHTNESS, 1000);
         } else {
         	strFontColor = PreferenceManager.getDefaultSharedPreferences(this).getString(SettingsActivity.KEY_FONT_NIGHT, "#ff") + strFontColor;
-        	displayBrightness = PreferenceManager.getDefaultSharedPreferences(this).getInt(SettingsActivity.KEY_DISPLAY_NIGHT_BRIGHTNESS, 1000);
+        	//displayBrightness = PreferenceManager.getDefaultSharedPreferences(this).getInt(SettingsActivity.KEY_DISPLAY_NIGHT_BRIGHTNESS, 1000);
         }
         
         strFontBrightness = strFontColor.substring(0, 3);
         strColorPart = strFontColor.substring(3);
 
-        Log.d(this, "Font color for " + daynight + " loaded from sharedpreferences. strFontCOlor = " + strFontColor + "; displayBrightness = " + displayBrightness);
+        Log.d(this, "Font color for " + daynight + " loaded from sharedpreferences. strFontCOlor = " + strFontColor);
 
         //Remove title bar
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -111,8 +111,10 @@ public class SetBrightnessActivity extends Activity {
         Display display = getWindowManager().getDefaultDisplay(); 
         width = display.getWidth();  // deprecated
         height = display.getHeight();
-        
+        Log.d(this, "display width = " + width + ": height = " + height);
+
         vg = (ViewGroup) findViewById(R.id.clock_layout);
+
         final WindowManager.LayoutParams params = getWindow().getAttributes();
         try {
         	fontBrightness = Integer.parseInt(strFontBrightness.substring(1), 16);
@@ -120,6 +122,17 @@ public class SetBrightnessActivity extends Activity {
         	Log.e(this, "There was an error parsing the fontbrightness: " + strFontBrightness + "; the error was " + e.getMessage());
         	fontBrightness = 255;
         }
+        try {
+            contentColor = Color.parseColor(strFontColor);
+        } catch (IllegalArgumentException e) {
+            Log.e(this, "Number format exception in parsing the color '" + strFontColor + "' in the SetBrightnessActivity");
+            strFontColor = "#ffff0000";
+            contentColor = Color.parseColor("#ffff0000");
+        }
+
+        tvTime.setTextColor(contentColor);
+        tvAmPm.setTextColor(contentColor);
+        tvNextAlarm.setTextColor(contentColor);
         SetScreenLevel(params, fontBrightness);
 		//params.screenBrightness = ((float)displayBrightness) / 1000f;
 		//Log.d(this, "Screen brightness has been set to " + ((float)displayBrightness) / 1000f);
@@ -131,27 +144,28 @@ public class SetBrightnessActivity extends Activity {
 				//String xpos;
 				switch(event.getAction()){
 				case MotionEvent.ACTION_MOVE:
+                    //xpos = String.valueOf(Math.min(Math.max(Integer.valueOf((int)event.getRawX() - 80), 0)  * 255 / (width - 160), 255)) + "/" + String.valueOf(width);
+                    fontBrightness = Math.min(Math.max(Integer.valueOf((int)event.getRawX() - 80), 0)  * 255 / (width - 160), 255);
+                    //displayBrightness = Math.min(Math.max(Integer.valueOf(height - (int)event.getRawY() - 40), 0)  * 1000 / (height - 80), 1000);
+                    //Log.d(this, "ActionDown/Move; x = " + event.getRawX() + "; y = " + event.getRawY());
+                    //strFontBrightness = "#" + String.format("%02X", fontBrightness);
+                    SetScreenLevel(params, fontBrightness);
+                    break;
 				case MotionEvent.ACTION_DOWN:
-					//xpos = String.valueOf(Math.min(Math.max(Integer.valueOf((int)event.getRawX() - 80), 0)  * 255 / (width - 160), 255)) + "/" + String.valueOf(width);
-					fontBrightness = Math.min(Math.max(Integer.valueOf((int)event.getRawX() - 80), 0)  * 255 / (width - 160), 255);
-					displayBrightness = Math.min(Math.max(Integer.valueOf(height - (int)event.getRawY() - 40), 0)  * 1000 / (height - 80), 1000);
-					//Log.d(this, "ActionDown/Move; x = " + event.getRawX() + "; y = " + event.getRawY());
-					//strFontBrightness = "#" + String.format("%02X", fontBrightness); 
-			        SetScreenLevel(params, fontBrightness);
-					break;
+				    break;
 				case MotionEvent.ACTION_UP:
 					//Integer percent = Math.min(((int)event.getRawX() + 80), width) * 255 / width;
 					fontBrightness = Math.min(Math.max(Integer.valueOf((int)event.getRawX() - 80), 0)  * 255 / (width - 160), 255);
 					strFontBrightness = "#" + String.format("%02X", fontBrightness);
-					Log.d(this, "Saving " + daynight + ": strFontBrightness = " + strFontBrightness + "; displayBrightness = " + displayBrightness);
+					Log.d(this, "Saving " + daynight + ": strFontBrightness = " + strFontBrightness);
 					//SetAllFontsToColor(strFontBrightness + strFontColor.substring(3));
 			        final SharedPreferences.Editor ed = prefs.edit();
 					if (daynight.equals("day")) {
 						ed.putString(SettingsActivity.KEY_FONT_DAY, strFontBrightness); // only storing the brightness part, such as #ff
-						ed.putInt(SettingsActivity.KEY_DISPLAY_DAY_BRIGHTNESS, displayBrightness);
+						//ed.putInt(SettingsActivity.KEY_DISPLAY_DAY_BRIGHTNESS, displayBrightness);
 					} else {
 						ed.putString(SettingsActivity.KEY_FONT_NIGHT, strFontBrightness); // only storing the brightness part, such as #81
-						ed.putInt(SettingsActivity.KEY_DISPLAY_NIGHT_BRIGHTNESS, displayBrightness);
+						//ed.putInt(SettingsActivity.KEY_DISPLAY_NIGHT_BRIGHTNESS, displayBrightness);
 					}
 					ed.commit();
 					break;
@@ -159,7 +173,7 @@ public class SetBrightnessActivity extends Activity {
 				return true;
 		}} );
         DrawIcons();
-        tvNextAlarm.setText("Slide left, right, up and down. Back button to save");
+        tvNextAlarm.setText("Slide left, right, up and down. Back button to save. (Saved fontbrightness was " + fontBrightness + ")");
     }
 	
 	private float GetAlphaFromFontBrightness(Integer fontBrightness) {
@@ -179,7 +193,7 @@ public class SetBrightnessActivity extends Activity {
         vg.startAnimation(alphaUp);
 
 		//SetAllFontsToColor(strFontBrightness + strFontColor.substring(3));
-		params.screenBrightness = ((float)displayBrightness) / 1000f;
+		/*params.screenBrightness = ((float)displayBrightness) / 1000f;
 		getWindow().setAttributes(params);
 		
 		strFontBrightness = "#" + String.format("%02X", fontBrightness);
@@ -195,6 +209,8 @@ public class SetBrightnessActivity extends Activity {
         tvTime.setTextColor(contentColor);
         tvAmPm.setTextColor(contentColor);
         tvNextAlarm.setTextColor(contentColor);
+
+		 */
 	}
 
     @Override
@@ -283,7 +299,7 @@ public class SetBrightnessActivity extends Activity {
         ibAlarmSettings.getLayoutParams().width = 60;
         ibDay.getLayoutParams().width = 60;
         ibNight.getLayoutParams().width = 60;
-        
+        /*
         Float alpha;
         try {
         	alpha = (float) Integer.parseInt(strFontBrightness.substring(1), 16) / 255f;
@@ -297,6 +313,7 @@ public class SetBrightnessActivity extends Activity {
         alphaUp.setFillAfter(true);
         vg.startAnimation(alphaUp);
         Log.d(this, "Alpha = " + alpha);
+         */
 	}
 	
     @Override

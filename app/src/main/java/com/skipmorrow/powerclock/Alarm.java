@@ -17,15 +17,21 @@
 package com.skipmorrow.powerclock;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.preference.PreferenceManager;
 import android.provider.BaseColumns;
 
 import java.text.DateFormatSymbols;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.Locale;
 
 
 public final class Alarm implements Parcelable {
@@ -59,13 +65,14 @@ public final class Alarm implements Parcelable {
         p.writeString(label);
         p.writeParcelable(alert, flags);
         p.writeInt(silent ? 1 : 0);
-        p.writeInt(skipNextRepeatingAlarm ? 1 : 0);
+        //p.writeLong(nextTime);
+        //p.writeInt(skipNextRepeatingAlarm ? 1 : 0);
     }
     //////////////////////////////
     // end Parcelable apis
     //////////////////////////////
     
-    public Calendar getNextUnskippedAlert() {
+/*    public Calendar getNextUnskippedAlert() {
     	// get the next actual alert for this alarm. If skipnext is not true, the next alarm is simply the next alarm.
     	// if skipnext is true, then the next alarm is actually the alarm after the next alarm.
     	Calendar c = Calendar.getInstance();
@@ -81,7 +88,7 @@ public final class Alarm implements Parcelable {
     	c.set(Calendar.HOUR_OF_DAY, hour);
     	c.set(Calendar.MINUTE, minutes);
     	return c;
-    }
+    }*/
 
     //////////////////////////////
     // Column definitions
@@ -143,10 +150,22 @@ public final class Alarm implements Parcelable {
         public static final String ALERT = "alert";
 
         /**
+         * Next alarm time in UTC milliseconds from the epoch.
+         * Holds when this alarm will sound. For single-shot alarms,
+         * this will just be the time the alarm is set for. (The same
+         * as alarmtime.)
+         * For repeated alarms, it will hold the time when the alarm is
+         * scheduled to sound again, regardless of whether the alarm is
+         * skipped or not.
+         * <P>Type: INTEGER</P>
+         */
+        public static final String NEXT_TIME = "nexttime";
+
+        /**
          * True if the next repeating alarm will be skipped
          * <P>Type: BOOLEAN</P>
          */
-        public static final String SKIP_NEXT_REPEATING_ALARM = "skipnext";
+        //public static final String SKIP_NEXT_REPEATING_ALARM = "skipnext";
 
         /**
          * The default sort order for this table
@@ -159,7 +178,7 @@ public final class Alarm implements Parcelable {
 
         static final String[] ALARM_QUERY_COLUMNS = {
             _ID, HOUR, MINUTES, DAYS_OF_WEEK, ALARM_TIME,
-            ENABLED, VIBRATE, MESSAGE, ALERT, SKIP_NEXT_REPEATING_ALARM };
+            ENABLED, VIBRATE, MESSAGE, ALERT};
 
         /**
          * These save calls to cursor.getColumnIndexOrThrow()
@@ -174,8 +193,9 @@ public final class Alarm implements Parcelable {
         public static final int ALARM_VIBRATE_INDEX = 6;
         public static final int ALARM_MESSAGE_INDEX = 7;
         public static final int ALARM_ALERT_INDEX = 8;
-        public static final int ALARM_SKIP_NEXT_INDEX = 9;
-        
+        //public static final int ALARM_SKIP_NEXT_INDEX = 9;
+        //public static final int NEXT_TIME_INDEX = 9;
+
     }
     //////////////////////////////
     // End column definitions
@@ -192,7 +212,10 @@ public final class Alarm implements Parcelable {
     public String     label;
     public Uri        alert;
     public boolean    silent;
-    public boolean    skipNextRepeatingAlarm;
+    SharedPreferences prefs;
+    private SharedPreferences.Editor ed;
+    //public long       nextTime;
+    //public boolean    skipNextRepeatingAlarm;
 
     public Alarm(Cursor c) {
         id = c.getInt(Columns.ALARM_ID_INDEX);
@@ -203,7 +226,8 @@ public final class Alarm implements Parcelable {
         time = c.getLong(Columns.ALARM_TIME_INDEX);
         vibrate = c.getInt(Columns.ALARM_VIBRATE_INDEX) == 1;
         label = c.getString(Columns.ALARM_MESSAGE_INDEX);
-        skipNextRepeatingAlarm = c.getInt(Columns.ALARM_SKIP_NEXT_INDEX) == 1;
+        //nextTime = c.getLong(Columns.NEXT_TIME_INDEX);
+        //skipNextRepeatingAlarm = c.getInt(Columns.ALARM_SKIP_NEXT_INDEX) == 1;
         String alertString = c.getString(Columns.ALARM_ALERT_INDEX);
         
         if (Alarms.ALARM_ALERT_SILENT.equals(alertString)) {
@@ -236,7 +260,31 @@ public final class Alarm implements Parcelable {
         label = p.readString();
         alert = (Uri) p.readParcelable(null);
         silent = p.readInt() == 1;
-        skipNextRepeatingAlarm = p.readInt() == 1;
+        //nextTime = p.readLong();
+        //skipNextRepeatingAlarm = p.readInt() == 1;
+    }
+
+    public Alarm (Context context, int hour, int minute, DaysOfWeek dow) {
+        enabled = true;
+        this.hour = hour;
+        this.minutes = minute;
+        daysOfWeek = dow;
+        if (!dow.isRepeatSet()) {
+            time = getNextUnskippedAlarmTimeInMillis(context);
+            //time = Alarms.calculateAlarm(context, hour, minutes, daysOfWeek).getTimeInMillis();
+        }
+    }
+
+    public Alarm (Context context, int hour, int minute, DaysOfWeek dow, int id) {
+        enabled = true;
+        this.hour = hour;
+        this.minutes = minute;
+        this.daysOfWeek = dow;
+        this.id = id;
+        if (!dow.isRepeatSet()) {
+            time = getNextUnskippedAlarmTimeInMillis(context);
+            //time = Alarms.calculateAlarm(context, hour, minutes, daysOfWeek).getTimeInMillis();
+        }
     }
 
     public String getLabelOrDefault(Context context) {
@@ -244,6 +292,167 @@ public final class Alarm implements Parcelable {
             return context.getString(R.string.default_label);
         }
         return label;
+    }
+
+    public ArrayList<Long> getAllAlarmTimesInMillis(Context context) {
+        //Log.d(this, "getAllAlarmTimesInMillis() called");
+        //Log.d(this, "Hour = " + hour + ", minute = " + minutes + "time = " + time);
+        ArrayList<Long> alarmTimes = new ArrayList<Long>();
+        Calendar c = Calendar.getInstance();
+        c.setTimeInMillis(System.currentTimeMillis());
+        SimpleDateFormat sdf = new SimpleDateFormat("E, d MMM h:mm a", Locale.getDefault());
+
+        // first handle the single-shot alarm
+        if (!daysOfWeek.isRepeatSet()) {
+            Log.d(this, "Single shot");
+            c.set(Calendar.HOUR_OF_DAY, hour);
+            c.set(Calendar.MINUTE, minutes);
+            time = c.getTimeInMillis();
+            time = time / 60000 * 60000;
+            // it is possible that the time computed above is behind the current time. If it is,
+            // add 24 hours.
+            if (time < System.currentTimeMillis()) {
+                Log.d(this, "the time is behind us. Add 24 hours");
+                time += 24 * 60 * 60 * 1000;
+            }
+            //Log.d(this, "Single shot alarm set for " + sdf.format(time));
+            alarmTimes.add(time);
+            Log.d(this, Alarms.formatTime(context, time));
+            return alarmTimes;
+        }
+
+        for (int i = 0; i < 7; i++) {
+            int dayCheck = (i + c.get(Calendar.DAY_OF_WEEK) + 5) % 7;
+            if (daysOfWeek.isSet(dayCheck)) {
+                Calendar r = Calendar.getInstance();
+                r.set(Calendar.YEAR, c.get(Calendar.YEAR));
+                r.set(Calendar.MONTH, c.get(Calendar.MONTH));
+                r.set(Calendar.DATE, c.get(Calendar.DATE));
+                r.set(Calendar.HOUR_OF_DAY, hour);
+                r.set(Calendar.MINUTE, minutes);
+                r.set(Calendar.SECOND, 0);
+                r.set(Calendar.MILLISECOND, 0);
+
+
+                // we have a match, but is the match for today? If so, the alarm
+                // could have been earlier in the day. Or it could still be ahead.
+                if (i == 0) {
+                    Calendar t = Calendar.getInstance();
+
+                    int minuteOfDay = t.get(Calendar.HOUR_OF_DAY) * 60 + t.get(Calendar.MINUTE);
+                    int alarmMinuteOfDay = hour * 60 + minutes;
+                    //Log.d(this, "i = 0. alarmMinuteOfDay = " + alarmMinuteOfDay + "; minuteOfDay = " + minuteOfDay);
+
+                    if (alarmMinuteOfDay < minuteOfDay) {
+                        r.add(Calendar.DATE, 7);
+                    }
+                } else {
+                    // some other day, but not today
+                    //Log.d(this, "Returning the next alarm time as " + r.toString());
+                    r.add(Calendar.DATE, i);
+                }
+                //Log.d(this, "adding " + sdf.format(r.getTimeInMillis()));
+                alarmTimes.add(r.getTimeInMillis());
+            }
+        }
+        Collections.sort(alarmTimes);
+        return alarmTimes;
+    }
+
+    /**
+     * returns the time (in millis) of the next scheduled time
+     * for this alarm. If it is a single-shot alarm, this will
+     * simply be the time it is scheduled. If it is a repeating
+     * alarm, then calculate when it is scheduled next.
+     * The alarm time returned could be skipped.
+     */
+    public long getNextAlarmTimeInMillis(Context context) {
+        try {
+            return getAllAlarmTimesInMillis(context).get(0);
+        }
+        catch (Exception e) {
+            Log.e(this, "Got an error trying to retrieve the nextAlarmTimeInMillis (Alarm class): " + e.getMessage());
+            Log.e(this, "Alarm name: " + this.label);
+            Log.e(this, "Alarm ID: " + this.id);
+            Log.e(this, "Alarm time: " + this.time);
+            Log.e(this, "dayOfWeek isRepeatSet?: " + daysOfWeek.isRepeatSet());
+        }
+        return 0;
+    }
+
+    public long getSecondAlarmTimeInMillis(Context context) {
+        try {
+            ArrayList<Long> al = getAllAlarmTimesInMillis(context);
+            if (al != null && al.size() > 0) {
+                return getAllAlarmTimesInMillis(context).get(1);
+            } else {
+                return -1;
+            }
+        }
+        catch (Exception e) {
+            Log.e(this, "Got an error trying to retrieve the secondAlarmTimeInMillis (Alarm class): " + e.getMessage());
+        }
+        return -1;
+    }
+
+    /**
+     * get the actual time that this alarm will sound, taking the possibility
+     * that skip_next may be set.
+     * @return
+     */
+    public long getNextUnskippedAlarmTimeInMillis(Context context) {
+        prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        boolean skipNextAlarm = prefs.getBoolean(SettingsActivity.KEY_SKIP_NEXT_ALARM, false);
+        //Log.d(this, "Calling getNextUnskippedAlarmTimeInMillis. skipNextAlarm = " + skipNextAlarm);
+        if (skipNextAlarm) {
+            return getSecondAlarmTimeInMillis(context);
+        } else {
+            return getNextAlarmTimeInMillis(context);
+        }
+    }
+
+    public int getDaysUntilNextAlarm(Context context) {
+        Calendar c = Calendar.getInstance();
+        Calendar now = Calendar.getInstance();
+        c.setTimeInMillis(getNextAlarmTimeInMillis(context));
+        return (int) (c.getTimeInMillis() - now.getTimeInMillis()) / (1000 * 60 * 60 * 24);
+    }
+
+    public static int getDaysUntilNextAlarm(int hour, int minute, Alarm.DaysOfWeek daysOfWeek) {
+        if (daysOfWeek.isRepeatSet()) {
+            // checking i = 0 and i = 7 are almost the same. Indeed, the math is the same as far
+            // as the (i+5)%7, but we check 0 first, and only if the alarm is still ahead of us
+            // (at a later time, but still today), and if that is the case, we return 0. But
+            // if we get all the way back to 7 without any other days being set (an alarm that is
+            // set to repeat once a week, and the time is behind us), then we can return 7
+            for (int i = 0; i <= 7; i++) {
+                int dayCheck = (i + 5) % 7;
+                if (daysOfWeek.isSet(dayCheck)) {
+                    if (i == 0) {
+                        // the match is today when i == 0. BUt it could be earlier in the day
+                        // or still ahead of us.
+                        Calendar t = Calendar.getInstance();
+
+                        int minuteOfDay = t.get(Calendar.HOUR_OF_DAY) * 60 + t.get(Calendar.MINUTE);
+                        int alarmMinuteOfDay = hour * 60 + minute;
+
+                        if (alarmMinuteOfDay > minuteOfDay) {
+                            return 0;
+                        }
+                    } else return i;
+                }
+            }
+        } else {
+            Calendar t = Calendar.getInstance();
+            int minuteOfDay = t.get(Calendar.HOUR_OF_DAY) * 60 + t.get(Calendar.MINUTE);
+            int alarmMinuteOfDay = hour * 60 + minute;
+            if (alarmMinuteOfDay < minuteOfDay) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+        return -1;
     }
 
     /*
@@ -315,7 +524,7 @@ public final class Alarm implements Parcelable {
             return ret.toString();
         }
         
-        private boolean isSet(int day) {
+        public boolean isSet(int day) {
         	boolean b = ((mDays & (1 << day)) > 0);
         	//Log.d(this, "Checking " + DAY_MAP[day] + "; isset = " + b + "; day = " + day);
             return b;
@@ -355,6 +564,7 @@ public final class Alarm implements Parcelable {
          * returns number of days from today until next alarm
          * @param c must be set to today
          */
+/*
         public int getNextAlarm(Calendar c) {
             if (mDays == 0) {
                 return -1;
@@ -375,7 +585,9 @@ public final class Alarm implements Parcelable {
             }
             return dayCount;
         }
-								
+*/
+
+/*
 		public int getAlarmAfterNext(Calendar c) {
             //Log.d(this, "getAlarmAfterNext() starting with " + c.get(Calendar.DATE));
             if (mDays == 0) {
@@ -414,13 +626,15 @@ public final class Alarm implements Parcelable {
             }
             return dayCount + (advanced ? 1 : 0);
 		}
-        
+*/
+
         /**
          * returns number of days from today until next unskipped alarm,
          * which will be not the first valid occurance following the
          * next alarm.
          * @param c must be set to today
          */
+/*
         public int getNextUnskippedAlarmx(Calendar c, int hour, int minute) {
         	Log.d(true, "Alarm", "Calculating next unskipped alarm");
         	int origNextAlarmDayCount = getNextAlarm(c);
@@ -444,5 +658,6 @@ public final class Alarm implements Parcelable {
         	Log.d(true, "Alarm", "Returning " + t1 + " + " + t2 + " + " + t3 + " = " + r);
         	return r;
         }
+*/
     }
 }

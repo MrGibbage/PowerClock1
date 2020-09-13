@@ -60,7 +60,7 @@ public class AlarmClock extends Activity implements OnItemClickListener {
 
     /** This must be false for production.  If true, turns on logging,
         test code, etc. */
-    static final boolean DEBUG = false;
+    static final boolean DEBUG = true;
 
     private SharedPreferences mPrefs;
     private LayoutInflater mFactory;
@@ -105,7 +105,8 @@ public class AlarmClock extends Activity implements OnItemClickListener {
             return ret;
         }
 
-        public void bindView(View view, Context context, Cursor cursor) {
+        public void bindView(View view, final Context context, Cursor cursor) {
+            Log.d(this, "AlarmClock bindView has been called.");
             final Alarm alarm = new Alarm(cursor);
 
             CheckBox onButton = (CheckBox) view.findViewById(R.id.alarmButton);
@@ -115,11 +116,12 @@ public class AlarmClock extends Activity implements OnItemClickListener {
                         boolean isChecked = ((CheckBox) v).isChecked();
                         Alarms.enableAlarm(AlarmClock.this, alarm.id, isChecked);
                         if (isChecked) {
-                        	//Log.d(this, "AlarmClock, alarm " + alarm.id + " enabled");
+                        	Log.d(this, "AlarmClock, alarm " + alarm.id + " enabled");
+                            Log.d(this, "hour: " + alarm.hour + "; minute: " + alarm.minutes + " (" + Alarms.formatTime(context, alarm.hour, alarm.minutes, alarm.daysOfWeek));
                             SetAlarm.popAlarmSetToast(AlarmClock.this,
                                 alarm.hour, alarm.minutes, alarm.daysOfWeek);
                         } else {
-                        	//Log.d(this, "AlarmClock, alarm " + alarm.id + " disabled");
+                        	Log.d(this, "AlarmClock, alarm " + alarm.id + " disabled");
                         }
                     }
             });
@@ -199,6 +201,7 @@ public class AlarmClock extends Activity implements OnItemClickListener {
     @Override
     protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+        Log.v(this, "In AlarmCLock, onCreate");
 
         String[] ampm = new DateFormatSymbols().getAmPmStrings();
         mAm = ampm[0];
@@ -206,6 +209,9 @@ public class AlarmClock extends Activity implements OnItemClickListener {
 
         mFactory = LayoutInflater.from(this);
         mPrefs = getSharedPreferences(PREFERENCES, 0);
+        if (Alarms.alarmHasDuplicateTimes(this)) {
+            Alarms.disableAllAlarms(this);
+        }
         mCursor = Alarms.getAlarmsCursor(getContentResolver());
 
         updateLayout();
@@ -249,6 +255,7 @@ public class AlarmClock extends Activity implements OnItemClickListener {
     @Override
     protected void onResume() {
         super.onResume();
+        Log.d(this, "AlarmClock, onResume");
 
         ClockDisplayActivity.isRunning = true;
         int face = mPrefs.getInt(PREF_CLOCK_FACE, 0);

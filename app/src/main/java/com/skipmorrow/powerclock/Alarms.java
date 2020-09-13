@@ -31,11 +31,15 @@ import android.os.Parcel;
 import android.provider.Settings;
 import android.text.format.DateFormat;
 
-import java.text.DateFormatSymbols;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Locale;
+import java.util.Set;
+
 
 /**
  * The Alarms provider supplies info about Alarm Clock settings
@@ -46,6 +50,14 @@ public class Alarms {
     // is a public action used in the manifest for receiving Alarm broadcasts
     // from the alarm manager.
     public static final String ALARM_ALERT_ACTION = "com.skipmorrow.powerclock.ALARM_ALERT";
+
+    // This action triggers the AlarmReceiver. It is a public action used in the manifest
+    // for receiving Alarm broadcasts for skipped alarms from the alarm manager.
+    // We need to know when a skipped alarm has passed so we can turn the "skip_next"
+    // setting back off again. We turn "skip_next" on when we want to skip the next alarm
+    // but we need to turn it back off again so we don't keep on skipping alarms.
+    // We turn it off at the time when the skipped alarm would have fired.
+    public static final String ALARM_SKIPPED_ACTION = "com.skipmorrow.powerclock.ALARM_SKIPPED";
 
     // This is a private action used by the AlarmKlaxon to update the UI to
     // show the alarm has been killed.
@@ -90,6 +102,7 @@ public class Alarms {
     public static Uri addAlarm(ContentResolver contentResolver) {
         ContentValues values = new ContentValues();
         values.put(Alarm.Columns.HOUR, 8);
+        values.put(Alarm.Columns.MINUTES, 0);
         return contentResolver.insert(Alarm.Columns.CONTENT_URI, values);
     }
 
@@ -115,14 +128,14 @@ public class Alarms {
      * @return cursor over all alarms
      */
     public static Cursor getAlarmsCursor(ContentResolver contentResolver) {
-        return contentResolver.query(
-                Alarm.Columns.CONTENT_URI, Alarm.Columns.ALARM_QUERY_COLUMNS,
+        return contentResolver.query(Alarm.Columns.CONTENT_URI,
+                Alarm.Columns.ALARM_QUERY_COLUMNS,
                 null, null, Alarm.Columns.DEFAULT_SORT_ORDER);
     }
 
     // Private method to get a more limited set of alarms from the database.
-    private static Cursor getFilteredAlarmsCursor(
-            ContentResolver contentResolver) {
+    // It only retrieves the enabled alarms.
+    private static Cursor getFilteredAlarmsCursor(ContentResolver contentResolver) {
         return contentResolver.query(Alarm.Columns.CONTENT_URI,
                 Alarm.Columns.ALARM_QUERY_COLUMNS, Alarm.Columns.WHERE_ENABLED,
                 null, null);
@@ -148,7 +161,8 @@ public class Alarms {
     }
     
     public static long setAlarm(Context context, Alarm a) {
-    	return setAlarm(context, a.id, a.enabled, a.hour, a.minutes, a.daysOfWeek, a.vibrate, a.getLabelOrDefault(context), a.alert.toString(), a.skipNextRepeatingAlarm);
+    	//return setAlarm(context, a.id, a.enabled, a.hour, a.minutes, a.daysOfWeek, a.vibrate, a.getLabelOrDefault(context), a.alert.toString(), a.skipNextRepeatingAlarm);
+        return setAlarm(context, a.id, a.enabled, a.hour, a.minutes, a.daysOfWeek, a.vibrate, a.getLabelOrDefault(context), a.alert.toString());
     }
 
 
@@ -161,17 +175,15 @@ public class Alarms {
      * @param hour           corresponds to the HOUR column
      * @param minutes        corresponds to the MINUTES column
      * @param daysOfWeek     corresponds to the DAYS_OF_WEEK column
-     * @param time           corresponds to the ALARM_TIME column
      * @param vibrate        corresponds to the VIBRATE column
      * @param message        corresponds to the MESSAGE column
      * @param alert          corresponds to the ALERT column
-     * @param skipnext       corresponds to the SKIPNEXT column
      * @return Time when the alarm will fire.
      */
     public static long setAlarm(
             Context context, int id, boolean enabled, int hour, int minutes,
             Alarm.DaysOfWeek daysOfWeek, boolean vibrate, String message,
-            String alert, boolean skipnext) {
+            String alert) {
 
         ContentValues values = new ContentValues(9);
         ContentResolver resolver = context.getContentResolver();
@@ -180,6 +192,7 @@ public class Alarms {
         long time = 0;
         if (!daysOfWeek.isRepeatSet()) {
             time = calculateAlarm(context, hour, minutes, daysOfWeek).getTimeInMillis();
+            time = time / 60000 * 60000;
         }
 
         //Log.d(true, "Alarms", "Alarms", "**  setAlarm * idx " + id + " hour " + hour + " minutes " +
@@ -193,12 +206,14 @@ public class Alarms {
         values.put(Alarm.Columns.VIBRATE, vibrate);
         values.put(Alarm.Columns.MESSAGE, message);
         values.put(Alarm.Columns.ALERT, alert);
-        values.put(Alarm.Columns.SKIP_NEXT_REPEATING_ALARM, skipnext ? 1 : 0);
+        //values.put(Alarm.Columns.NEXT_TIME, nextAlarmTime);
+        //values.put(Alarm.Columns.SKIP_NEXT_REPEATING_ALARM, skipnext ? 1 : 0);
         resolver.update(ContentUris.withAppendedId(Alarm.Columns.CONTENT_URI, id),
                         values, null, null);
 
         long timeInMillis =
-                calculateAlarm(context, hour, minutes, daysOfWeek, skipnext).getTimeInMillis();
+                calculateAlarm(context, hour, minutes, daysOfWeek).getTimeInMillis();
+        timeInMillis = timeInMillis / 60000 * 60000;
 
         if (enabled) {
             // If this alarm fires before the next snooze, clear the snooze to
@@ -229,6 +244,23 @@ public class Alarms {
         setNextAlert(context);
     }
 
+    public static void disableAllAlarms(Context context) {
+        Cursor cursor = getAlarmsCursor(context.getContentResolver());
+        ContentResolver resolver = context.getContentResolver();
+
+        ContentValues values = new ContentValues(2);
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                do {
+                    Alarm a = new Alarm(cursor);
+                    a.enabled = false;
+                    setAlarm(context, a);
+                } while (cursor.moveToNext());
+            }
+            cursor.close();
+        }
+    }
+
     private static void enableAlarmInternal(final Context context,
             final int id, boolean enabled) {
         enableAlarmInternal(context, getAlarm(context.getContentResolver(), id), enabled);
@@ -236,6 +268,7 @@ public class Alarms {
 
     private static void enableAlarmInternal(final Context context,
             final Alarm alarm, boolean enabled) {
+        Log.d(context, "enableAlarmInternal*************");
         ContentResolver resolver = context.getContentResolver();
 
         ContentValues values = new ContentValues(2);
@@ -248,35 +281,33 @@ public class Alarms {
             if (!alarm.daysOfWeek.isRepeatSet()) {
                 time = calculateAlarm(context, alarm.hour, alarm.minutes,
                         alarm.daysOfWeek).getTimeInMillis();
+                time = time / 60000 * 60000;
             }
             values.put(Alarm.Columns.ALARM_TIME, time);
+            Log.d(context, "Setting a system alarm for " + formatDayAndTimeWithSeconds(context, time));
         }
 
         resolver.update(ContentUris.withAppendedId(
                 Alarm.Columns.CONTENT_URI, alarm.id), values, null, null);
     }
 
-    public static Alarm calculateNextAlert(final Context context) {
+    // Which alarm is scheduled to alert next? This could be a skipped alarm.
+    // The alarm must be enabled.
+    // Returns null if there are no enabled alarms.
+    public static Alarm getNextAlertingAlarm(final Context context) {
         Alarm alarm = null;
         long minTime = Long.MAX_VALUE;
         long now = System.currentTimeMillis();
+        now = now / 60000 * 60000;
         Cursor cursor = getFilteredAlarmsCursor(context.getContentResolver());
         if (cursor != null) {
             if (cursor.moveToFirst()) {
                 do {
                     Alarm a = new Alarm(cursor);
-                    // A time of 0 indicates this is a repeating alarm, so
-                    // calculate the time to get the next alert.
-                    if (a.time == 0) {
-                        a.time = calculateAlarm(context, a.hour, a.minutes, a.daysOfWeek)
-                                .getTimeInMillis();
-                    } else if (a.time < now) {
-                        // Expired alarm, disable it and move along.
-                        enableAlarmInternal(context, a, false);
-                        continue;
-                    }
-                    if (a.time < minTime) {
-                        minTime = a.time;
+                    long nextAlarmTimeInMillis = a.getNextAlarmTimeInMillis(context);
+                    nextAlarmTimeInMillis = nextAlarmTimeInMillis / 60000 * 60000;
+                    if (nextAlarmTimeInMillis < minTime) {
+                        minTime = nextAlarmTimeInMillis;
                         alarm = a;
                     }
                 } while (cursor.moveToNext());
@@ -285,81 +316,123 @@ public class Alarms {
         }
         return alarm;
     }
-    
+
+    public static int getIdOfNextAlertingAlarm(final Context context) {
+        return getNextAlertingAlarm(context).id;
+    }
+
+    // Use this to get the time of the alarm after next. If "skipnext" is true,
+    // what time is the NEXT alarm, after the one that is being skipped?
+    public static long getNextNextAlertingAlarmTimeInMillis(final Context context) {
+        Cursor cursor = getFilteredAlarmsCursor(context.getContentResolver());
+        ArrayList<Long> allAlarmTimes = new ArrayList<Long>();
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                do {
+                    Alarm a = new Alarm(cursor);
+                    allAlarmTimes.addAll(a.getAllAlarmTimesInMillis(context));
+                } while (cursor.moveToNext());
+            }
+            cursor.close();
+        }
+        Collections.sort(allAlarmTimes);
+        return allAlarmTimes.get(1);
+    }
+
+    // get an array of all alarm times for all set alarms, enabled or not.
+    // It doesn't make sense to have two alarms with the same time.
+    // This does not check each day to see if there is a conflict.
+    // It just checks the hours and minutes.
+    // This gets called to check to see if a newly set alarm has any conflicts
+    // called from the SetAlarm class.
+    public static ArrayList<Integer> getAllAlarmTimes(final  Context context) {
+        Cursor cursor = getAlarmsCursor(context.getContentResolver());
+        ArrayList<Integer> allAlarmTimes = new ArrayList<Integer>();
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                do {
+                    Alarm a = new Alarm(cursor);
+                    allAlarmTimes.add(a.hour * 60 + a.minutes);
+                } while (cursor.moveToNext());
+            }
+            cursor.close();
+        }
+        Collections.sort(allAlarmTimes);
+        return allAlarmTimes;
+    }
+
+    public static ArrayList<Integer> getAllAlarmTimesExceptId(final  Context context, int id) {
+        Cursor cursor = getAlarmsCursor(context.getContentResolver());
+        ArrayList<Integer> allAlarmTimes = new ArrayList<Integer>();
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                do {
+                    Alarm a = new Alarm(cursor);
+                    if (a.id != id) {
+                        allAlarmTimes.add(a.hour * 60 + a.minutes);
+                    }
+                } while (cursor.moveToNext());
+            }
+            cursor.close();
+        }
+        Collections.sort(allAlarmTimes);
+        return allAlarmTimes;
+    }
+
+    public static boolean alarmHasDuplicateTimes (final  Context context, int hour, int minute, int id) {
+        Log.d(context, "Looking for an alarm with an hour of " + hour +
+                " and minute of " + minute + " but not alarm id " + id);
+        ArrayList<Integer> existingTimes = new ArrayList<Integer>();
+        existingTimes = getAllAlarmTimesExceptId(context, id);
+        Integer testTime = hour * 60 + minute;
+        return existingTimes.contains(testTime);
+    }
+
+    // check to see if there are any duplicate times set.
+    public static boolean alarmHasDuplicateTimes (final  Context context) {
+        ArrayList<Integer> existingTimes = new ArrayList<Integer>();
+        existingTimes = getAllAlarmTimes(context);
+        Set<Integer> set = new HashSet<Integer>(existingTimes);
+        return(set.size() < existingTimes.size());
+    }
+
+    // check to see if there are any duplicate times set.
+    public static boolean alarmHasDuplicateTimes (final  Context context, int hour, int minute) {
+        ArrayList<Integer> existingTimes = new ArrayList<Integer>();
+        existingTimes = getAllAlarmTimes(context);
+        existingTimes.add(hour * 60 + minute);
+        Set<Integer> set = new HashSet<Integer>(existingTimes);
+        return(set.size() < existingTimes.size());
+    }
+
+
+    // Use this to get the time of the alarm after next. If "skipnext" is true,
+    // what time is the NEXT alarm, after the one that is being skipped?
+    public static Long getNextNextAlertingAlarm(final  Context context) {
+        Cursor cursor = getFilteredAlarmsCursor(context.getContentResolver());
+        ArrayList<Long> allAlarmTimes = new ArrayList<Long>();
+        ArrayList<Integer> allAlarmIds = new ArrayList<Integer>();
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                do {
+                    Alarm a = new Alarm(cursor);
+                    allAlarmTimes.addAll(a.getAllAlarmTimesInMillis(context));
+                    allAlarmIds.add(a.id);
+                } while (cursor.moveToNext());
+            }
+            cursor.close();
+        }
+        Collections.sort(allAlarmTimes);
+        return allAlarmTimes.get(1);
+    }
+
     public static boolean alarmsHaveSameIdAndNextAlertDate(Alarm a1, Alarm a2) {
     	if (a1 != null && a2!=null) {
-    		return (a1.id == a2.id && a1.time == a2.time && a1.getNextUnskippedAlert() == a2.getNextUnskippedAlert());
+    		//return (a1.id == a2.id && a1.time == a2.time && a1.getNextUnskippedAlert() == a2.getNextUnskippedAlert());
+            return (a1.id == a2.id && a1.time == a2.time);
     	} else return false;
     }
     
-    public static void setAllAlarmsSkippedNextToFalse(final Context context) {
-        Cursor cursor = getFilteredAlarmsCursor(context.getContentResolver());
-        if (cursor != null) {
-            if (cursor.moveToFirst()) {
-                do {
-                    Alarm a = new Alarm(cursor);
-                    a.skipNextRepeatingAlarm = false;
-                    Alarms.setAlarm(context, a);
-                } while (cursor.moveToNext());
-            }
-            cursor.close();
-        }
-    }
-
-    public static Alarm calculateNextUnskippedAlert(final Context context) {
-        Alarm alarm = null;
-        long minTime = Long.MAX_VALUE;
-        long now = System.currentTimeMillis();
-        long curNextAlarmTime = Long.MAX_VALUE;
-        Cursor cursor = getFilteredAlarmsCursor(context.getContentResolver());
-        SimpleDateFormat _sdfNextAlarm = new SimpleDateFormat("E, d MMM h:mm a", Locale.getDefault());
-        if (cursor != null) {
-            if (cursor.moveToFirst()) {
-                do {
-                    Alarm a = new Alarm(cursor);
-                    Calendar t = Calendar.getInstance();
-                    // A time of 0 indicates this is a repeating alarm, so
-                    // calculate the time to get the next alert.
-                    Log.d(true, "Alarms", "Checking alarm #" + a.id +"; time = " + a.hour + ":" + a.minutes + "; a.time = " + a.time);
-                    if (a.time == 0 && a.skipNextRepeatingAlarm == false) {
-                        Log.d(true, "Alarms", "Test 1 is true");
-                        curNextAlarmTime = calculateAlarm(context, a.hour, a.minutes, a.daysOfWeek).getTimeInMillis();
-                        int d = (int) ((curNextAlarmTime - t.getTimeInMillis()) / 1000 / 60);
-                        t.add(Calendar.MINUTE, d);
-                        Log.d(true, "Alarms", "curNextAlarmTime = " + curNextAlarmTime + "; This alarm is set to go off in " + d + " minutes at " + _sdfNextAlarm.format(t.getTime()));
-                    } else if (a.time == 0 && a.skipNextRepeatingAlarm == true) {
-                        Log.d(true, "Alarms", "Test 2 is true");
-                        curNextAlarmTime = calculateAlarm(context, a.hour, a.minutes, a.daysOfWeek, true).getTimeInMillis();
-                        int d = (int) ((curNextAlarmTime - t.getTimeInMillis()) / 1000 / 60);
-                        t.add(Calendar.MINUTE, d);
-                        Log.d(true, "Alarms", "curNextAlarmTime = " + curNextAlarmTime + "; This alarm is set to go off in " + d + " minutes at " + _sdfNextAlarm.format(t.getTime()));
-                    } else if (a.time < now) {
-                        Log.d(true, "Alarms", "Test 3 is true");
-                        // Expired alarm, disable it and move along.
-                        enableAlarmInternal(context, a, false);
-                        continue;
-                    }
-                    if (curNextAlarmTime < minTime) {
-                    	Log.d(true, "Alarms", "Alarm #" + a.id + " is now the next unskipped alarm");
-                    	Log.d(true, "Alarms", "Is this a skipped alarm? " + a.skipNextRepeatingAlarm);
-                    	Calendar c = Calendar.getInstance();
-                    	Date d = new Date(curNextAlarmTime);
-                    	c.setTime(d);
-                    	DateFormatSymbols symbols = new DateFormatSymbols(new Locale("us"));
-                    	// for the current Locale :
-                    	//   DateFormatSymbols symbols = new DateFormatSymbols(); 
-                    	String[] dayNames = symbols.getShortWeekdays();
-                    	Log.d(true, "Alarms", "This alarm is scheduled to go off at " + dayNames[c.get(Calendar.DAY_OF_WEEK)] + ", " + c.get(Calendar.HOUR_OF_DAY) + ":" + c.get(Calendar.MINUTE));
-                        minTime = curNextAlarmTime; 
-                        alarm = a;
-                    }
-                } while (cursor.moveToNext());
-            }
-            cursor.close();
-        }
-        Log.d(true, "Alarms", "Returning the next unskipped alarm id is " + alarm.id);
-        return alarm;
-    }
 
     /**
      * Disables non-repeating alarms that have passed.  Called at
@@ -368,6 +441,7 @@ public class Alarms {
     public static void disableExpiredAlarms(final Context context) {
         Cursor cur = getFilteredAlarmsCursor(context.getContentResolver());
         long now = System.currentTimeMillis();
+        now = now / 60000 * 60000;
 
         if (cur.moveToFirst()) {
             do {
@@ -392,13 +466,20 @@ public class Alarms {
      * otherwise loads all alarms, activates next alert.
      */
     public static void setNextAlert(final Context context) {
+        Log.d(true, "Alarms", "setNextAlert**************");
         if (!enableSnoozeAlert(context)) {
-            Alarm alarm = calculateNextAlert(context);
+            Log.d(true, "Alarms", "notSnoozing");
+            Alarm alarm = getNextAlertingAlarm(context);
             if (alarm != null) {
-                enableAlert(context, alarm, alarm.time);
+                //enableAlert(context, alarm, alarm.time);
+                Log.d(true, "Alarms", "enabling an alarm for Hour: " + alarm.hour + "; Minute: " + alarm.minutes);
+                enableAlert(context, alarm, alarm.getNextAlarmTimeInMillis(context));
             } else {
+                Log.d(true, "Alarms", "alarm was null");
                 disableAlert(context);
             }
+        } else {
+            Log.d(true, "Alarms", "Snoozing. Not setting any alarms this time");
         }
     }
 
@@ -410,14 +491,14 @@ public class Alarms {
      * @param alarm Alarm.
      * @param atTimeInMillis milliseconds since epoch
      */
-    private static void enableAlert(Context context, final Alarm alarm,
+    public static void enableAlert(Context context, final Alarm alarm,
             final long atTimeInMillis) {
         AlarmManager am = (AlarmManager)
                 context.getSystemService(Context.ALARM_SERVICE);
 
-        if (Log.LOGV) {
-            Log.v(true, "Alarms", "** setAlert id " + alarm.id + " atTime " + atTimeInMillis);
-        }
+        Calendar q = Calendar.getInstance();
+        q.setTimeInMillis(atTimeInMillis);
+        Log.v(true, "Alarms", "** setAlert id " + alarm.id + " atTime " + formatDayAndTimeWithSeconds(context, atTimeInMillis));
 
         Intent intent = new Intent(ALARM_ALERT_ACTION);
 
@@ -453,9 +534,9 @@ public class Alarms {
     /**
      * Disables alert in AlarmManger and StatusBar.
      *
-     * @param id Alarm ID.
      */
     static void disableAlert(Context context) {
+        Log.d(context, "Calling disableAlert()");
         AlarmManager am = (AlarmManager)
                 context.getSystemService(Context.ALARM_SERVICE);
         PendingIntent sender = PendingIntent.getBroadcast(
@@ -521,6 +602,7 @@ public class Alarms {
      * @return true if snooze is set
      */
     private static boolean enableSnoozeAlert(final Context context) {
+        Log.d(true, "Alarms", "calling enableSnoozeAlert");
         SharedPreferences prefs = context.getSharedPreferences(
                 AlarmClock.PREFERENCES, 0);
 
@@ -551,9 +633,6 @@ public class Alarms {
         context.sendBroadcast(alarmChanged);
     }
 
-    static Calendar calculateAlarm(Context context, int hour, int minute, Alarm.DaysOfWeek daysOfWeek) {
-    	return calculateAlarm(context, hour, minute, daysOfWeek, false);
-    }
     /**
      * Given an alarm in hours and minutes, return a time suitable for
      * setting in AlarmManager.
@@ -561,7 +640,12 @@ public class Alarms {
      * @param minute 0-59
      * @param daysOfWeek 0-59
      */
-    static Calendar calculateAlarm(Context context, int hour, int minute, Alarm.DaysOfWeek daysOfWeek, boolean skippedNext) {
+    static Calendar calculateAlarm(Context context, int hour, int minute, Alarm.DaysOfWeek daysOfWeek) {
+        Alarm a = new Alarm (context, hour, minute, daysOfWeek);
+        Calendar c = Calendar.getInstance();
+        c.setTimeInMillis(a.getNextUnskippedAlarmTimeInMillis(context));
+        return c;
+        /*
 
         //Log.d(true, "Alarms", "Calculating alarm; hour = " + hour + ", minute = " + minute + ", days = " + daysOfWeek.toString(context, true));
     	// start with now
@@ -581,19 +665,15 @@ public class Alarms {
         c.set(Calendar.MINUTE, minute);
         c.set(Calendar.SECOND, 0);
         c.set(Calendar.MILLISECOND, 0);
-        int addDays = daysOfWeek.getNextAlarm(c);
-        if (skippedNext) {
-        	//Log.d(true, "Alarms", "skippedNext is set. The next alarm (which will be skipped) is set for " + addDays + " day(s) from now");
-        	addDays = daysOfWeek.getAlarmAfterNext(c);
-        	//Log.d(true, "Alarms", "The alarm after next is set for " + addDays + " day(s) from now.");
-        }
-        	
-        /* Log.v("** TIMES * " + c.getTimeInMillis() + " hour " + hour +
-           " minute " + minute + " dow " + c.get(Calendar.DAY_OF_WEEK) + " from now " +
-           addDays); */
+        Alarm a = new Alarm (context, hour, minute, daysOfWeek);
+        //int addDays = Alarm.getDaysUntilNextAlarm(hour, minute, daysOfWeek);
+        int addDays = a.getDaysUntilNextAlarm();
+
         if (addDays > 0) c.add(Calendar.DAY_OF_WEEK, addDays);
         //Log.d(true, "Alarms", "Returning " + addDays);
         return c;
+        */
+
     }
 
     static String formatTime(final Context context, int hour, int minute,
@@ -608,12 +688,26 @@ public class Alarms {
         return (c == null) ? "" : (String)DateFormat.format(format, c);
     }
 
+    static String formatTime(final Context context, Long timeInMillis) {
+        Calendar c = Calendar.getInstance();
+        c.setTimeInMillis(timeInMillis);
+        String format = get24HourMode(context) ? M24 : M12;
+        return (c == null) ? "" : (String)DateFormat.format(format, c);
+    }
+
     /**
      * Shows day and time -- used for lock screen
      */
     private static String formatDayAndTime(final Context context, Calendar c) {
         String format = get24HourMode(context) ? DM24 : DM12;
         return (c == null) ? "" : (String)DateFormat.format(format, c);
+    }
+
+    private static String formatDayAndTimeWithSeconds(final Context context, Long timeInMillis) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss,SSS", Locale.US);
+        if (timeInMillis == null) return "";
+        Date dateTime = new Date(timeInMillis);
+        return (String)sdf.format(dateTime);
     }
 
     /**

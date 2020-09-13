@@ -23,7 +23,9 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.BroadcastReceiver;
+import android.content.SharedPreferences;
 import android.os.Parcel;
+import android.preference.PreferenceManager;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -43,6 +45,7 @@ public class AlarmReceiver extends BroadcastReceiver {
     @SuppressWarnings("deprecation")
 	@Override
     public void onReceive(Context context, Intent intent) {
+        Log.d(this, "AlarmReceiver.onReceive()");
         if (Alarms.ALARM_KILLED.equals(intent.getAction())) {
             // The alarm has been killed, update the notification
             updateNotification(context, (Alarm)
@@ -52,9 +55,19 @@ public class AlarmReceiver extends BroadcastReceiver {
         } else if (Alarms.CANCEL_SNOOZE.equals(intent.getAction())) {
             Alarms.saveSnoozeAlert(context, -1, -1);
             return;
+        } else if (Alarms.ALARM_SKIPPED_ACTION.equals(intent.getAction())) {
+            Log.d(this, "ALARM_SKIPPED_ACTION");
+            SharedPreferences prefs;
+            SharedPreferences.Editor ed;
+            prefs = PreferenceManager.getDefaultSharedPreferences(context);
+            ed =  prefs.edit();
+            ed.putBoolean(SettingsActivity.KEY_SKIP_NEXT_ALARM, false);
+            ed.apply();
+            return;
         }
-        
 
+
+        Log.d(this, "Looks like it was just a regular alarm");
         Alarm alarm = null;
         // Grab the alarm from the intent. Since the remote AlarmManagerService
         // fills in the Intent to add some extra data, it must unparcel the
@@ -62,6 +75,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         // To avoid this, do the marshalling ourselves.
         final byte[] data = intent.getByteArrayExtra(Alarms.ALARM_RAW_DATA);
         if (data != null) {
+            Log.d(this, "data was not null");
             Parcel in = Parcel.obtain();
             in.unmarshall(data, 0, data.length);
             in.setDataPosition(0);
@@ -75,18 +89,18 @@ public class AlarmReceiver extends BroadcastReceiver {
             return;
         }
 
+        Log.d(this, "alarm is not null. Continuing...");
+
         // Intentionally verbose: always log the alarm time to provide useful
         // information in bug reports.
         long now = System.currentTimeMillis();
         SimpleDateFormat format =
                 new SimpleDateFormat("HH:mm:ss.SSS aaa", Locale.getDefault());
         Log.v(this, "AlarmReceiver.onReceive() id " + alarm.id + " setFor "
-                + format.format(new Date(alarm.time)));
+                + format.format(new Date(alarm.getNextAlarmTimeInMillis(context))));
 
-        if (now > alarm.time + STALE_WINDOW * 1000) {
-            if (Log.LOGV) {
-                Log.v(this, "AlarmReceiver ignoring stale alarm");
-            }
+        if (now > alarm.getNextAlarmTimeInMillis(context) + STALE_WINDOW * 1000) {
+            Log.v(this, "AlarmReceiver ignoring stale alarm");
             return;
         }
 
@@ -95,80 +109,79 @@ public class AlarmReceiver extends BroadcastReceiver {
         AlarmAlertWakeLock.acquireCpuWakeLock(context);
 
         /* Close dialogs and window shade */
+        Log.d(this, "Setting up the ACTION_CLOSE_SYSTEM_DIALOGS intent");
         Intent closeDialogs = new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
         context.sendBroadcast(closeDialogs);
 
-        if (!alarm.skipNextRepeatingAlarm) {
-	        // Decide which activity to start based on the state of the keyguard.
-        	
-        	// added the type argument "<?>" to prevent a warning. If it causes problems, remove it. 
-	        //Class c = AlarmAlert.class;
-	        Class c = AlarmAlert.class;
-	        KeyguardManager km = (KeyguardManager) context.getSystemService(
-	                Context.KEYGUARD_SERVICE);
-	        if (km.inKeyguardRestrictedInputMode()) {
-	            // Use the full screen activity for security.
-	            c = AlarmAlertFullScreen.class;
-	        }
-	
-	        /* launch UI, explicitly stating that this is not due to user action
-	         * so that the current app's notification management is not disturbed */
-	        Intent alarmAlert = new Intent(context, c);
-	        alarmAlert.putExtra(Alarms.ALARM_INTENT_EXTRA, alarm);
-	        alarmAlert.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
-	                | Intent.FLAG_ACTIVITY_NO_USER_ACTION);
-	        context.startActivity(alarmAlert);
-	
-	        // Disable the snooze alert if this alarm is the snooze.
-	        Alarms.disableSnoozeAlert(context, alarm.id);
-	        // Disable this alarm if it does not repeat.
-	        if (!alarm.daysOfWeek.isRepeatSet()) {
-	            Alarms.enableAlarm(context, alarm.id, false);
-	        } else {
-	            // Enable the next alert if there is one. The above call to
-	            // enableAlarm will call setNextAlert so avoid calling it twice.
-	            Alarms.setNextAlert(context);
-	        }
-		
-	        // Play the alarm alert and vibrate the device.
-	        Intent playAlarm = new Intent(Alarms.ALARM_ALERT_ACTION);
-	        playAlarm.putExtra(Alarms.ALARM_INTENT_EXTRA, alarm);
-	        context.startService(playAlarm);
-		
-	        // Trigger a notification that, when clicked, will show the alarm alert
-	        // dialog. No need to check for fullscreen since this will always be
-	        // launched from a user action.
-	        Intent notify = new Intent(context, AlarmAlert.class);
-	        notify.putExtra(Alarms.ALARM_INTENT_EXTRA, alarm);
-	        PendingIntent pendingNotify = PendingIntent.getActivity(context,
-	                alarm.id, notify, 0);
-	
-	        // Use the alarm's label or the default label as the ticker text and
-	        // main text of the notification.
-	        String label = alarm.getLabelOrDefault(context);
-	        Notification n = new Notification(R.drawable.stat_notify_alarm,
-	                label, alarm.time);
-	        n.setLatestEventInfo(context, label,
-	                context.getString(R.string.alarm_notify_text),
-	                pendingNotify);
-	        n.flags |= Notification.FLAG_SHOW_LIGHTS
-	                | Notification.FLAG_ONGOING_EVENT;
-	        n.defaults |= Notification.DEFAULT_LIGHTS;
-	
-	        // Send the notification using the alarm id to easily identify the
-	        // correct notification.
-	        NotificationManager nm = getNotificationManager(context);
-	        nm.notify(alarm.id, n);
-        } else {
-        	Alarms.setAlarm(context, alarm.id, alarm.enabled, alarm.hour, alarm.minutes, alarm.daysOfWeek, alarm.vibrate,
-        			alarm.label, alarm.alert.toString(), false);
-	        NotificationManager nm = getNotificationManager(context);
-	        nm.cancel(alarm.id);
-            context.stopService(new Intent(Alarms.ALARM_ALERT_ACTION));
-            Intent i = new Intent();
-            i.setAction("UPDATE_CLOCK_DISPLAY_RECEIVER");
-            context.sendBroadcast(i);
+        SharedPreferences prefs = context.getSharedPreferences(
+                AlarmClock.PREFERENCES, 0);
+        SharedPreferences.Editor ed = prefs.edit();
+        ed.putBoolean(SettingsActivity.KEY_SKIP_NEXT_ALARM, false);
+        ed.commit();
+
+        // Decide which activity to start based on the state of the keyguard.
+
+        // added the type argument "<?>" to prevent a warning. If it causes problems, remove it.
+        //Class c = AlarmAlert.class;
+        Class c = AlarmAlert.class;
+        KeyguardManager km = (KeyguardManager) context.getSystemService(
+                Context.KEYGUARD_SERVICE);
+        if (km.inKeyguardRestrictedInputMode()) {
+            // Use the full screen activity for security.
+            c = AlarmAlertFullScreen.class;
         }
+
+        /* launch UI, explicitly stating that this is not due to user action
+         * so that the current app's notification management is not disturbed */
+        Log.d(this, "Setting up the ALARM_INTENT_EXTRA intent");
+        Intent alarmAlert = new Intent(context, c);
+        alarmAlert.putExtra(Alarms.ALARM_INTENT_EXTRA, alarm);
+        alarmAlert.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+                | Intent.FLAG_ACTIVITY_NO_USER_ACTION);
+        context.startActivity(alarmAlert);
+
+        // Disable the snooze alert if this alarm is the snooze.
+        Alarms.disableSnoozeAlert(context, alarm.id);
+        // Disable this alarm if it does not repeat.
+        if (!alarm.daysOfWeek.isRepeatSet()) {
+            Alarms.enableAlarm(context, alarm.id, false);
+        }
+        //else {
+            // Enable the next alert if there is one. The above call to
+            // enableAlarm will call setNextAlert so avoid calling it twice.
+        //    Alarms.setNextAlert(context);
+        //}
+
+        // Play the alarm alert and vibrate the device.
+        Log.d(this, "Setting up the ALARM_ALERT_ACTION intent");
+        Intent playAlarm = new Intent(Alarms.ALARM_ALERT_ACTION);
+        playAlarm.putExtra(Alarms.ALARM_INTENT_EXTRA, alarm);
+        context.startService(playAlarm);
+
+        // Trigger a notification that, when clicked, will show the alarm alert
+        // dialog. No need to check for fullscreen since this will always be
+        // launched from a user action.
+        Intent notify = new Intent(context, AlarmAlert.class);
+        notify.putExtra(Alarms.ALARM_INTENT_EXTRA, alarm);
+        PendingIntent pendingNotify = PendingIntent.getActivity(context,
+                alarm.id, notify, 0);
+
+        // Use the alarm's label or the default label as the ticker text and
+        // main text of the notification.
+        String label = alarm.getLabelOrDefault(context);
+        Notification n = new Notification(R.drawable.stat_notify_alarm,
+                label, alarm.time);
+        n.setLatestEventInfo(context, label,
+                context.getString(R.string.alarm_notify_text),
+                pendingNotify);
+        n.flags |= Notification.FLAG_SHOW_LIGHTS
+                | Notification.FLAG_ONGOING_EVENT;
+        n.defaults |= Notification.DEFAULT_LIGHTS;
+
+        // Send the notification using the alarm id to easily identify the
+        // correct notification.
+        NotificationManager nm = getNotificationManager(context);
+        nm.notify(alarm.id, n);
     }
     
     private NotificationManager getNotificationManager(Context context) {
@@ -179,6 +192,7 @@ public class AlarmReceiver extends BroadcastReceiver {
     @SuppressWarnings("deprecation")
 	private void updateNotification(Context context, Alarm alarm, int timeout) {
         NotificationManager nm = getNotificationManager(context);
+        Log.v(this, "updateNotification has been called");
 
         // If the alarm is null, just cancel the notification.
         if (alarm == null) {
@@ -198,7 +212,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         // silenced.
         String label = alarm.getLabelOrDefault(context);
         Notification n = new Notification(R.drawable.stat_notify_alarm,
-                label, alarm.time);
+                label, alarm.getNextAlarmTimeInMillis(context));
         n.setLatestEventInfo(context, label,
                 context.getString(R.string.alarm_alert_alert_silenced, timeout),
                 intent);

@@ -40,6 +40,9 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+import java.util.Calendar;
+
 /**
  * Manages each alarm
  */
@@ -53,6 +56,8 @@ public class SetAlarm extends PreferenceActivity
     private RepeatPreference mRepeatPref;
     private MenuItem mDeleteAlarmItem;
     private MenuItem mTestAlarmItem;
+    private Button mSaveButton;
+    private Button mCancelButton;
 
     private int     mId;
     private boolean mEnabled;
@@ -67,6 +72,7 @@ public class SetAlarm extends PreferenceActivity
 	@Override
     protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+        Log.v(this, "In SetAlarm, onCreate");
 
         addPreferencesFromResource(R.xml.alarm_prefs);
 
@@ -88,9 +94,7 @@ public class SetAlarm extends PreferenceActivity
 
         Intent i = getIntent();
         mId = i.getIntExtra(Alarms.ALARM_ID, -1);
-        if (Log.LOGV) {
-            Log.v(this, "In SetAlarm, alarm id = " + mId);
-        }
+        Log.v(this, "In SetAlarm, onCreate, alarm id = " + mId);
 
         /* load alarm details from database */
         Alarm alarm = Alarms.getAlarm(getContentResolver(), mId);
@@ -108,6 +112,7 @@ public class SetAlarm extends PreferenceActivity
         mVibratePref.setChecked(alarm.vibrate);
         // Give the alert uri to the preference.
         mAlarmPref.setAlert(alarm.alert);
+        Log.d(this, "Calling updateTime from onCreate()");
         updateTime();
 
         // We have to do this to get the save/cancel buttons to highlight on
@@ -140,8 +145,8 @@ public class SetAlarm extends PreferenceActivity
                 R.layout.save_cancel_alarm, ll);
 
         // Attach actions to each button.
-        Button b = (Button) v.findViewById(R.id.alarm_save);
-        b.setOnClickListener(new View.OnClickListener() {
+        mSaveButton = (Button) v.findViewById(R.id.alarm_save);
+        mSaveButton.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     // Enable the alarm when clicking "Done"
                     mEnabled = true;
@@ -149,8 +154,8 @@ public class SetAlarm extends PreferenceActivity
                     finish();
                 }
         });
-        b = (Button) v.findViewById(R.id.alarm_cancel);
-        b.setOnClickListener(new View.OnClickListener() {
+        mCancelButton = (Button) v.findViewById(R.id.alarm_cancel);
+        mCancelButton.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     finish();
                 }
@@ -158,6 +163,7 @@ public class SetAlarm extends PreferenceActivity
 
         // Replace the old content view with our new one.
         setContentView(ll);
+        handleDupe(mHour, mMinutes, mId);
     }
 
     @SuppressWarnings("deprecation")
@@ -174,22 +180,61 @@ public class SetAlarm extends PreferenceActivity
 
     @Override
     public void onBackPressed() {
-        saveAlarm();
-        finish();
+        if (!Alarms.alarmHasDuplicateTimes(this, mHour, mMinutes, mId)) {
+            Log.d(this, "Back button pressed. No dupes found!");
+            saveAlarm();
+            finish();
+        }
     }
 
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-        mHour = hourOfDay;
-        mMinutes = minute;
-        updateTime();
-        // If the time has been changed, enable the alarm.
-        mEnabled = true;
+        Log.d(this, "onTimeSet. hourOfDay = " + hourOfDay + "; minute = " + minute);
+        handleDupe(hourOfDay, minute, mId);
+        if (!Alarms.alarmHasDuplicateTimes(this, hourOfDay, minute, mId)) {
+            Log.d(this, "No dupes found!");
+            mHour = hourOfDay;
+            mMinutes = minute;
+            // If the time has been changed, enable the alarm.
+            mEnabled = true;
+            // update the summary line under the time
+            Log.d(this, "Calling updateTime from onTimeSet()");
+            updateTime();
+        }
     }
 
-    private void updateTime() {
-        if (Log.LOGV) {
-            Log.v(this, "updateTime " + mId);
+    private void handleDupe(int hourOfDay, int minute) {
+        if (!Alarms.alarmHasDuplicateTimes(this, hourOfDay, minute)) {
+            Log.d(this, "No dupes found!");
+            mSaveButton.setEnabled(true);
+            mCancelButton.setEnabled(true);
+        } else {
+            Log.d(this, "There is a dupe!");
+            mSaveButton.setEnabled(false);
+            mCancelButton.setEnabled(false);
+            Toast toast = Toast.makeText(this, "Duplicate times/days", Toast.LENGTH_LONG);
+            ToastMaster.setToast(toast);
+            toast.show();
         }
+    }
+
+    private void handleDupe(int hourOfDay, int minute, int id) {
+        if (!Alarms.alarmHasDuplicateTimes(this, hourOfDay, minute, id)) {
+            Log.d(this, "No dupes found!");
+            mSaveButton.setEnabled(true);
+            mCancelButton.setEnabled(true);
+        } else {
+            Log.d(this, "There is a dupe!");
+            mSaveButton.setEnabled(false);
+            mCancelButton.setEnabled(false);
+            Toast toast = Toast.makeText(this, "Duplicate times/days", Toast.LENGTH_LONG);
+            ToastMaster.setToast(toast);
+            toast.show();
+        }
+    }
+
+    // updates the time in the summary line for the time option
+    private void updateTime() {
+        Log.v(this, "updateTime " + mId + "; hour = " + mHour + "; minutes = " + mMinutes);
         mTimePref.setSummary(Alarms.formatTime(this, mHour, mMinutes,
                 mRepeatPref.getDaysOfWeek()));
     }
@@ -198,12 +243,13 @@ public class SetAlarm extends PreferenceActivity
         final String alert = mAlarmPref.getAlertString();
         long time = Alarms.setAlarm(this, mId, mEnabled, mHour, mMinutes,
                 mRepeatPref.getDaysOfWeek(), mVibratePref.isChecked(),
-                mLabel.getText(), alert, false);
+                mLabel.getText(), alert);
 
         if (mEnabled) {
             popAlarmSetToast(this, time);
         }
     }
+
 
     /**
      * Write alarm out to persistent store and pops toast if alarm
@@ -219,7 +265,7 @@ public class SetAlarm extends PreferenceActivity
 
         // Fix alert string first
         long time = Alarms.setAlarm(context, id, enabled, hour, minute,
-                daysOfWeek, vibrate, label, alert, skipNext);
+                daysOfWeek, vibrate, label, alert);
 
         if (enabled && popToast) {
             popAlarmSetToast(context, time);
@@ -232,13 +278,20 @@ public class SetAlarm extends PreferenceActivity
      */
     static void popAlarmSetToast(Context context, int hour, int minute,
                                  Alarm.DaysOfWeek daysOfWeek) {
-        popAlarmSetToast(context,
-                Alarms.calculateAlarm(context, hour, minute, daysOfWeek)
+        Calendar q = Calendar.getInstance();
+        q.setTimeInMillis(Alarms.calculateAlarm(context, hour, minute, daysOfWeek)
                 .getTimeInMillis());
+        Log.d(context, Alarms.formatTime(context, q));
+        popAlarmSetToast(context, q.getTimeInMillis());
+        //Alarm a = new Alarm(context, hour, minute, daysOfWeek);
     }
 
     private static void popAlarmSetToast(Context context, long timeInMillis) {
+        Calendar q = Calendar.getInstance();
+        q.setTimeInMillis(timeInMillis);
+        Log.d(context, "popAlarmSetToast: " + Alarms.formatTime(context, q));
         String toastText = formatToast(context, timeInMillis);
+        Log.d(context, "toastText: " + toastText);
         Toast toast = Toast.makeText(context, toastText, Toast.LENGTH_LONG);
         ToastMaster.setToast(toast);
         toast.show();
@@ -250,6 +303,7 @@ public class SetAlarm extends PreferenceActivity
      */
     static String formatToast(Context context, long timeInMillis) {
         long delta = timeInMillis - System.currentTimeMillis();
+        Log.d(context, "Delta = " + delta);
         long hours = delta / (1000 * 60 * 60);
         long minutes = delta / (1000 * 60) % 60;
         long days = hours / 24;

@@ -199,8 +199,8 @@ public class AlarmProvider extends ContentProvider {
         if (!values.containsKey(Alarm.Columns.ENABLED))
             values.put(Alarm.Columns.ENABLED, 0);
 
-        if (!values.containsKey(Alarm.Columns.SKIP_NEXT_REPEATING_ALARM))
-            values.put(Alarm.Columns.SKIP_NEXT_REPEATING_ALARM, 0);
+        //if (!values.containsKey(Alarm.Columns.SKIP_NEXT_REPEATING_ALARM))
+        //    values.put(Alarm.Columns.SKIP_NEXT_REPEATING_ALARM, 0);
 
         SQLiteDatabase db = mOpenHelper.getWritableDatabase();
         long rowId = db.insert("alarms", Alarm.Columns.MESSAGE, values);

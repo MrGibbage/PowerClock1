@@ -29,7 +29,7 @@ public class AlarmInitReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         String action = intent.getAction();
-        if (Log.LOGV) Log.v(this, "AlarmInitReceiver" + action);
+        Log.v(this, "AlarmInitReceiver" + action);
 
         if (context.getContentResolver() == null) {
             Log.e(this, "AlarmInitReceiver: FAILURE unable to get content resolver.  Alarms inactive.");

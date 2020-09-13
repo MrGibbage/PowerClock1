@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/PowerClock1.iml" filepath="$PROJECT_DIR$/PowerClock1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PowerClock1.iml" filepath="$PROJECT_DIR$/PowerClock1.iml" group="PowerClock1" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="PowerClock1/app" />
     </modules>
   </component>
 </project>

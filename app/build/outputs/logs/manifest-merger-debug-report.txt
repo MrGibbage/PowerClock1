@@ -1,267 +1,271 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:1:1-131:12
-INJECTED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:1:1-131:12
-INJECTED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:1:1-131:12
-INJECTED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:1:1-131:12
-INJECTED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:1:1-131:12
-INJECTED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:1:1-131:12
-INJECTED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:1:1-131:12
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:1:1-130:12
+INJECTED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:1:1-130:12
+INJECTED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:1:1-130:12
+INJECTED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:1:1-130:12
+INJECTED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:1:1-130:12
+INJECTED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:1:1-130:12
+INJECTED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:1:1-130:12
 	package
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:2:9-44
-		INJECTED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:2:9-44
+		INJECTED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml
 	android:versionName
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:4:9-34
-		INJECTED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:4:9-34
+		INJECTED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:1:11-69
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:1:11-69
 	android:versionCode
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:3:9-32
-		INJECTED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:3:9-32
+		INJECTED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml
 uses-sdk
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:7:5-9:41
-INJECTED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:7:5-9:41
-INJECTED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:7:5-9:41
-INJECTED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:7:5-9:41
-INJECTED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:7:5-9:41
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:7:5-47
+INJECTED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:7:5-47
+INJECTED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:7:5-47
+INJECTED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:7:5-47
+INJECTED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:7:5-47
 	android:targetSdkVersion
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:9:9-38
-		INJECTED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:7:15-44
+		INJECTED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:8:9-35
-		INJECTED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:7:5-47
+		INJECTED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml
 original-package
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:11:5-66
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:9:5-66
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:11:23-63
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:9:23-63
 uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:13:5-81
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:11:5-81
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:13:22-78
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:11:22-78
 uses-permission#android.permission.WAKE_LOCK
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:14:5-67
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:12:5-67
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:14:22-65
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:12:22-65
 uses-permission#android.permission.VIBRATE
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:15:5-65
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:13:5-65
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:15:22-63
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:13:22-63
 uses-permission#android.permission.WRITE_SETTINGS
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:16:5-73
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:14:5-73
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:16:22-70
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:14:22-70
 uses-permission#android.permission.DISABLE_KEYGUARD
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:17:5-75
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:15:5-75
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:17:22-72
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:15:22-72
 uses-permission#android.permission.READ_PHONE_STATE
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:18:5-75
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:16:5-75
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:18:22-72
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:16:22-72
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:19:5-81
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:17:5-81
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:19:22-78
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:17:22-78
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:20:5-79
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:18:5-79
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:20:22-76
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:18:22-76
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:21:5-67
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:19:5-67
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:21:22-64
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:19:22-64
 application
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:23:5-130:19
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:21:5-129:19
 	android:label
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:23:18-51
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:21:18-51
 	android:icon
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:24:18-65
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:22:18-65
 provider#com.skipmorrow.powerclock.AlarmProvider
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:26:9-98
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:24:9-98
 	android:authorities
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:26:48-95
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:24:48-95
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:26:19-47
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:24:19-47
 activity#com.skipmorrow.powerclock.AlarmClock
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:28:9-30:20
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:26:9-28:20
 	android:label
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:28:45-78
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:26:45-78
 	android:configChanges
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:29:17-87
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:27:17-87
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:28:19-44
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:26:19-44
 activity#com.skipmorrow.powerclock.ClockDisplayActivity
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:32:9-43:20
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:30:9-41:20
 	android:screenOrientation
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:36:13-50
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:34:13-50
 	android:label
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:34:13-46
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:32:13-46
 	android:configChanges
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:35:13-83
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:33:13-83
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:33:13-48
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:31:13-48
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.DEFAULT+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:38:13-42:29
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:36:13-40:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:39:17-69
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:37:17-69
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:39:25-66
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:37:25-66
 category#android.intent.category.DEFAULT
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:40:17-76
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:38:17-76
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:40:27-73
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:38:27-73
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:41:17-77
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:39:17-77
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:41:27-74
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:39:27-74
 activity#com.skipmorrow.powerclock.SettingsActivity
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:45:9-46:20
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:43:9-44:20
 	android:label
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:45:51-83
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:43:51-83
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:45:19-50
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:43:19-50
 activity#com.skipmorrow.powerclock.HelpActivity
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:48:9-49:20
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:46:9-47:20
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:48:19-46
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:46:19-46
 activity#com.skipmorrow.powerclock.SetBrightnessActivity
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:51:9-56:20
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:49:9-54:20
 	android:screenOrientation
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:54:13-50
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:52:13-50
 	android:label
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:53:13-45
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:51:13-45
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:52:13-49
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:50:13-49
 activity#com.skipmorrow.powerclock.SetFontScaleActivity
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:58:9-63:20
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:56:9-61:20
 	android:screenOrientation
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:61:13-50
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:59:13-50
 	android:label
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:60:13-45
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:58:13-45
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:59:13-48
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:57:13-48
 activity#com.skipmorrow.powerclock.SetAlarm
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:65:9-66:90
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:63:9-64:90
 	android:label
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:65:43-76
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:63:43-76
 	android:configChanges
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:66:17-87
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:64:17-87
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:65:19-42
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:63:19-42
 activity#com.skipmorrow.powerclock.AlarmAlert
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:68:9-73:89
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:66:9-71:89
 	android:excludeFromRecents
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:69:17-50
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:67:17-50
 	android:launchMode
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:71:17-52
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:69:17-52
 	android:configChanges
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:73:17-87
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:71:17-87
 	android:theme
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:70:17-51
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:68:17-51
 	android:taskAffinity
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:72:17-40
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:70:17-40
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:68:19-44
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:66:19-44
 activity#com.skipmorrow.powerclock.AlarmAlertFullScreen
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:78:9-83:89
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:76:9-81:89
 	android:excludeFromRecents
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:79:17-50
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:77:17-50
 	android:launchMode
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:81:17-52
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:79:17-52
 	android:configChanges
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:83:17-87
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:81:17-87
 	android:theme
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:80:17-74
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:78:17-74
 	android:taskAffinity
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:82:17-40
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:80:17-40
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:78:19-54
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:76:19-54
 activity#com.skipmorrow.powerclock.ClockPicker
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:85:9-48
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:83:9-48
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:85:19-45
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:83:19-45
 receiver#com.skipmorrow.powerclock.AlarmReceiver
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:87:9-93:20
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:85:9-92:20
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:87:19-47
-intent-filter#action:name:alarm_killed+action:name:cancel_snooze+action:name:com.skipmorrow.powerclock.ALARM_ALERT
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:88:13-92:29
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:85:19-47
+intent-filter#action:name:alarm_killed+action:name:cancel_snooze+action:name:com.skipmorrow.powerclock.ALARM_ALERT+action:name:com.skipmorrow.powerclock.ALARM_SKIPPED
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:86:13-91:29
 action#com.skipmorrow.powerclock.ALARM_ALERT
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:89:16-79
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:87:16-79
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:89:24-76
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:87:24-76
+action#com.skipmorrow.powerclock.ALARM_SKIPPED
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:88:16-81
+	android:name
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:88:24-78
 action#alarm_killed
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:90:16-54
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:89:16-54
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:90:24-51
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:89:24-51
 action#cancel_snooze
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:91:16-55
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:90:16-55
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:91:24-52
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:90:24-52
 receiver#com.skipmorrow.powerclock.PowerConnectedReceiver
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:95:9-100:20
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:94:9-99:20
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:95:19-56
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:94:19-56
 intent-filter#action:name:android.intent.action.ACTION_POWER_CONNECTED+action:name:android.intent.action.UMS_CONNECTED
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:96:13-99:29
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:95:13-98:29
 action#android.intent.action.ACTION_POWER_CONNECTED
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:97:17-87
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:96:17-87
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:97:25-84
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:96:25-84
 action#android.intent.action.UMS_CONNECTED
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:98:17-78
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:97:17-78
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:98:25-75
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:97:25-75
 service#com.skipmorrow.powerclock.AlarmKlaxon
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:108:9-112:19
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:107:9-111:19
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:108:18-44
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:107:18-44
 intent-filter#action:name:com.skipmorrow.powerclock.ALARM_ALERT
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:109:13-111:29
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:108:13-110:29
 receiver#com.skipmorrow.powerclock.AlarmInitReceiver
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:114:9-121:20
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:113:9-120:20
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:114:19-51
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:113:19-51
 intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.LOCALE_CHANGED+action:name:android.intent.action.TIMEZONE_CHANGED+action:name:android.intent.action.TIME_SET
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:115:13-120:29
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:114:13-119:29
 action#android.intent.action.BOOT_COMPLETED
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:116:17-79
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:115:17-79
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:116:25-76
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:115:25-76
 action#android.intent.action.TIME_SET
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:117:17-73
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:116:17-73
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:117:25-70
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:116:25-70
 action#android.intent.action.TIMEZONE_CHANGED
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:118:17-81
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:117:17-81
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:118:25-78
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:117:25-78
 action#android.intent.action.LOCALE_CHANGED
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:119:17-79
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:118:17-79
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:119:25-76
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:118:25-76
 receiver#com.skipmorrow.powerclock.AnalogAppWidgetProvider
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:123:9-129:20
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:122:9-128:20
 	android:label
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:123:58-95
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:122:58-95
 	android:icon
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:124:10-57
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:123:10-57
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:123:19-57
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:122:19-57
 intent-filter#action:name:android.appwidget.action.APPWIDGET_UPDATE
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:125:13-127:29
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:124:13-126:29
 action#android.appwidget.action.APPWIDGET_UPDATE
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:126:17-84
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:125:17-84
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:126:25-81
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:125:25-81
 meta-data#android.appwidget.provider
-ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:128:13-109
+ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:127:13-109
 	android:resource
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:128:66-106
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:127:66-106
 	android:name
-		ADDED from C:\Users\Skip\AndroidStudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:128:24-65
+		ADDED from C:\Users\skip\StudioProjects\PowerClock1\app\src\main\AndroidManifest.xml:127:24-65

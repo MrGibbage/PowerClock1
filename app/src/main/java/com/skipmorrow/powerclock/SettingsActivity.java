@@ -66,6 +66,7 @@ public class SettingsActivity extends PreferenceActivity
     static final String KEY_GENTLE_WAKE_DURATION = "gentle_wake_duration";
     static final String KEY_KEEP_SCREEN_ON = "keep_screen_on";
     static final String KEY_ICON_SIZE = "icon_size";
+    static final String KEY_SKIP_NEXT_ALARM = "skip_next";
     
     @SuppressWarnings("deprecation")
 	@Override
